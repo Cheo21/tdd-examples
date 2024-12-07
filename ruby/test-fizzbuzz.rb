@@ -1,9 +1,9 @@
 require_relative 'fizzbuzz'
 require 'minitest/autorun'
 
-class TestFizzBuzz < Minitest::Test
 
-  def testWithZero
+class TestFizzBuzz < Minitest::Test
+  def test_with_zero
     assert_equal fizzbuzz(0), 0
   end
 
@@ -16,17 +16,22 @@ class TestFizzBuzz < Minitest::Test
   def test_print_fizz_when_multiple_of_three_only
     assert_equal fizzbuzz(3), 'Fizz'
     refute_equal fizzbuzz(15), 'Fizz'
-    assert_empty 'Add more tests for Fizz'
+    refute_equal fizzbuzz(20), 'Fizz'
+    assert_equal fizzbuzz(6), 'Fizz'
   end
 
   def test_print_fizz_when_multiple_of_5_only
     assert_equal fizzbuzz(5), 'Buzz'
     refute_equal fizzbuzz(15), 'Buzz'
-    assert_empty 'Add more tests for Buzz'
+    assert_equal fizzbuzz(20), 'Buzz'
+    refute_equal fizzbuzz(45), 'Buzz'
   end
 
-  def test_print_fizz_when_multiple_of_3_and_5
-      assert_empty 'To be done'
+  def test_print_fizz_buzz_when_multiple_of_three_and_five
+    assert_equal fizzbuzz(15), 'FizzBuzz'
+    assert_equal fizzbuzz(45), 'FizzBuzz'
+    refute_equal fizzbuzz(5), 'FizzBuzz'
+    refute_equal fizzbuzz(3), 'FizzBuzz'
   end
 end
 
