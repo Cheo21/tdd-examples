@@ -1,7 +1,7 @@
 require_relative 'fizzbuzz'
 require 'minitest/autorun'
 
-
+# Tests de funcion Fizzbuzz
 class TestFizzBuzz < Minitest::Test
   def test_with_zero
     assert_equal fizzbuzz(0), 0
@@ -34,5 +34,3 @@ class TestFizzBuzz < Minitest::Test
     refute_equal fizzbuzz(3), 'FizzBuzz'
   end
 end
-
-
